@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<canvas id="cvs" width="800" height="600" style="border: 1px solid red"></canvas>
+
+<body>
+    <script src="./node_modules/seajs/dist/sea.js"></script>
+
+    <script>
+    var cvs = document.getElementById('cvs');
+    var ctx = cvs.getContext('2d');
+
+    // 游戏入口函数
+    seajs.use('./bird/main.js', function(main) {
+        // main是接收到exports对象
+        main.main(ctx,cvs);
+    });
+    </script>
+</body>
+
+</html>
